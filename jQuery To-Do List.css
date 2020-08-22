@@ -1,0 +1,18 @@
+input {
+width:300px;
+}
+ul {
+background-color:#6974B8;
+width:350px;
+}
+ul li {
+list-style-type:none;
+/*padding:12px;*/
+color:white;
+font-size:16px;
+}
+img {
+width:16px;
+height:16px;
+padding:0px 0px 0px 10px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Todo App</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<link rel="stylesheet" href="/home/antoine/Documents/Code/jQuery To-Do List.css">
+	</head>
+	<body>
+		<h1>To-Do List</h1>
+		<span id="cnt">List empty.</span>
+		<input type="text" placeholder="New item"/>
+		<button id="add">Add</button>
+		<div id="list">
+			<ul id="mylist"></ul>
+		</div>
+		<script>
+			$(function() {
+				$("#add").click(function() {
+					//event handler
+					var val = $("input").val();
+					if (val !== "") {
+						var elem = $("<li></li>").text(val);
+						$(elem).prepend("<input type='checkbox'/>");
+						$(elem).append("<img class='rem' src='https://image.flaticon.com/icons/png/512/61/61848.png' alt:'Delete btn'>");
+						$("#mylist").append(elem);
+						$("input").val("");//clear the input
+						$(".rem").on("click", function() {
+							$(this).parent().remove();
+						});
+						//Item count
+						var n = $("li").length;
+						$("#cnt").text("Items: "+n);
+					}
+					});
+				});
+		</script>
+	</body>
+</html>
